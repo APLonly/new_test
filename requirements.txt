@@ -9,3 +9,9 @@ black==23.3.0
 flake8==6.0.0
 mypy==1.4.1
 -e .
+
+
+
+# bash init_setup.sh
+# python -m tox
+# python -m pytest testpath/
