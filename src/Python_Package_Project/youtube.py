@@ -16,13 +16,14 @@ def get_time_info(URL: str) -> int:
         split_value = URL.split("=")
         if len(split_value) > 3:
             raise InvalidURLException
-        if "=" in URL and "&ab_channel" in URL: #edge_youtube_link
+        
+        elif "=" in URL and "&ab_channel" in URL: #edge_youtube_link
             video_id, time = split_value[-2].split("&")[0], 0
             _verify_video_id_len(video_id)
             logger.info(f"Video starts at: {time}")
             return time
         
-        if "watch" in URL:
+        elif "watch" in URL:
             if "&t" in URL: 
                 video_id, time = split_value[-2][:-2], int(split_value[-1][:-1])
                 _verify_video_id_len(video_id)
@@ -40,7 +41,7 @@ def get_time_info(URL: str) -> int:
                 logger.info(f"Video starts at: {time}")
                 return time
             else: 
-                video_id, time = split_value[0].split("/")[-1]
+                video_id, time = split_value[0].split("/")[-1], 0
                 _verify_video_id_len(video_id)
                 logger.info(f"Video starts at: {time}")
                 return time
