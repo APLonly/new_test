@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as f:
     LONG_DESCRIPTION = f.read()
 
-__version__ = 0.0
+__version__ = 0.1
 
 SRC_REPO = "Python_Package_Project"
 REPO_NAME = "new_test"
